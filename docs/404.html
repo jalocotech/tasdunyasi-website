@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="tr" data-root="/tasdunyasi-website/">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sayfa bulunamadı | Taş Dünyası</title>
+<meta name="description" content="Taş Dünyası: peyzaj, döşeme ve dekorasyon için doğal taş, kayaç ve cam. Tamburlanmış dolomit, çakıl, traverten, heykel ve daha fazlası. Kemerburgaz, İstanbul.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/tasdunyasi-website/assets/site.css">
+<link rel="icon" href="/tasdunyasi-website/assets/img/logo.jpg">
+</head>
+<body class="">
+<div style="background:#FFF6D6;color:#6B5300;font-size:13px;text-align:center;padding:6px 12px">Taslak site: içerik ve görseller onay aşamasındadır.</div>
+<div class="topbar"><div class="wrap"><div><a href="tel:+902123601115" data-ev="phone_click">+90 212 360 11 15</a><a href="tel:+902123602044" data-ev="phone_click">+90 212 360 20 44</a><a href="tel:+902123600761" data-ev="phone_click">+90 212 360 07 61</a></div><div><a href="/tasdunyasi-website/e-katalog/">E-Katalog</a><a href="/tasdunyasi-website/urun-kategori/antika-urunler/">Antik Eşya Mağazası</a><a href="/tasdunyasi-website/sanal-tur/">360° Sanal Tur</a></div></div></div>
+<header class="header">
+<div class="wrap">
+<a class="logo" href="/tasdunyasi-website/" aria-label="Taş Dünyası ana sayfa"><img src="/tasdunyasi-website/assets/img/logo.jpg" alt="Taş Dünyası – Stone World"></a>
+<nav class="nav" aria-label="Ana menü"><a href="/tasdunyasi-website/">Ana Sayfa</a><a href="/tasdunyasi-website/hakkimizda/">Hakkımızda</a><a href="/tasdunyasi-website/urunler/">Ürünler</a><a href="/tasdunyasi-website/referanslar/">Referanslar</a><a href="/tasdunyasi-website/iletisim/">İletişim</a></nav>
+<div class="header-actions">
+<form class="search" action="/tasdunyasi-website/urunler/" method="get"><label class="sr" for="q">Ürün ara</label><input id="q" name="q" type="search" placeholder="Ürün ara"><button type="submit">Ara</button></form>
+<a class="btn btn-ghost" data-wa="">WhatsApp</a>
+<a class="btn btn-cta" href="/tasdunyasi-website/iletisim/#teklif" data-ev="quote_click">Teklif İste</a>
+</div>
+</div>
+<div class="stripe" aria-hidden="true"><i></i><i></i><i></i></div>
+</header>
+<main>
+<div class="wrap page-head" style="padding:64px 24px"><h1>Sayfa bulunamadı</h1><p id="msg">Aradığınız sayfa taşınmış olabilir.</p><div class="btns" style="margin-top:18px"><a class="btn btn-navy" href="/tasdunyasi-website/urunler/">Ürünlere git</a><a class="btn btn-ghost" href="/tasdunyasi-website/">Ana sayfa</a></div></div>
+<script>
+(function(){
+  var base="/tasdunyasi-website"; var path=decodeURIComponent(location.pathname); if(base&&path.indexOf(base)===0) path=path.slice(base.length);
+  var m=path.match(/^\/(tr-TR|en-US)(?:\/(.*))?$/i); var kat=/^\/(dogaltas-e-katalog\d*|ekatalog)(\/|$)/i.test(path)?'e-katalog/':(/^\/sanaltur\/?$/i.test(path)?'sanal-tur/':null);
+  function go(t){ location.replace(base+'/'+String(t).replace(/^\//,'')); }
+  if(kat) return go(kat);
+  if(!m) return;
+  document.getElementById('msg').textContent='Yeni adrese yönlendiriliyorsunuz…';
+  fetch(base+'/assets/legacy.json').then(function(r){return r.json()}).then(function(L){
+    var lang=m[1].toLowerCase()==='tr-tr'?'tr':'en'; var segs=(m[2]||'').split('/').filter(Boolean); if(!segs.length) return go('');
+    var ids=segs.slice(1).filter(function(s){return /^\d+$/.test(s)&&s.replace(/^0+/,'')!==''}).map(function(s){return s.replace(/^0+/,'')}).reverse();
+    for(var i=0;i<ids.length;i++) if(L[lang][ids[i]]) return go(L[lang][ids[i]]);
+    var slug=segs[0].toLowerCase().replace(/ı/g,'i').replace(/ğ/g,'g').replace(/ü/g,'u').replace(/ş/g,'s').replace(/ö/g,'o').replace(/ç/g,'c').replace(/[^a-z0-9-]+/g,'');
+    var pages=lang==='tr'?L.pages_tr:L.pages_en; if(pages[slug]) return go(pages[slug]);
+    go(segs[1]==='3'||segs[1]==='1199'?'urunler/':'');
+  });
+})();
+</script>
+</main>
+<footer class="footer">
+<div class="stripe" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="wrap cols">
+<div><div class="brand">Taş Dünyası</div><div>1973'ten bu yana doğal taş, madencilik ve peyzaj.</div></div>
+<div><strong>Ürünler</strong><a href="/tasdunyasi-website/urun-kategori/tamburlanmis-peyzaj-taslari/">Tamburlanmış Peyzaj Taşları</a><a href="/tasdunyasi-website/urun-kategori/cam-peyzaj-urunleri/">Cam Peyzaj Ürünleri</a><a href="/tasdunyasi-website/urun-kategori/doseme-ve-kaplama-taslari/">Ebatlı Döşeme ve Kaplama Taşları</a><a href="/tasdunyasi-website/urun-kategori/dogal-kayaclar/">Doğal Kayaçlar</a><a href="/tasdunyasi-website/urun-kategori/el-yapimi-peyzaj-urunleri/">Doğal Taştan El Yapımı Peyzaj Ürünleri</a><a href="/tasdunyasi-website/urunler/">Tüm ürünler</a></div>
+<div><strong>Kurumsal</strong><a href="/tasdunyasi-website/hakkimizda/">Hakkımızda</a><a href="/tasdunyasi-website/referanslar/">Referanslar</a><a href="/tasdunyasi-website/e-katalog/">E-Katalog</a><a href="/tasdunyasi-website/yasal-uyari/">Yasal uyarı ve KVKK</a></div>
+<div><strong>İletişim</strong><a href="tel:+902123601115" data-ev="phone_click">+90 212 360 11 15</a><a href="tel:+902123602044" data-ev="phone_click">+90 212 360 20 44</a><a href="tel:+902123600761" data-ev="phone_click">+90 212 360 07 61</a><div>Mithatpaşa Mah. Selanik Bulvarı, Uzun Kemer Mevkii, Kemerburgaz – Eyüpsultan / İstanbul</div></div>
+</div>
+<div class="wrap legal">© Taş Dünyası Doğal Taşlar Madencilik İnş. San. ve Dış Tic. Ltd. Şti. Tüm hakları saklıdır.</div>
+</footer>
+<script src="/tasdunyasi-website/assets/config.js"></script>
+<script src="/tasdunyasi-website/assets/site.js"></script>
+</body>
+</html>

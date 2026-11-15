@@ -1,0 +1,413 @@
+{
+ "cats": [
+  [
+   "tamburlanmis-peyzaj-taslari",
+   "Tamburlanmış Peyzaj Taşları"
+  ],
+  [
+   "tamburlanmis-peyzaj-taslari/dolomit-kalsit-mermer",
+   "Dolomit, Kalsit, Mermer"
+  ],
+  [
+   "tamburlanmis-peyzaj-taslari/dere-ve-cakil-taslari",
+   "Dere ve Çakıl Taşları"
+  ],
+  [
+   "tamburlanmis-peyzaj-taslari/can-tasi-serpantin-siyah-angel",
+   "Çan Taşı, Serpantin, Siyah Angel"
+  ],
+  [
+   "tamburlanmis-peyzaj-taslari/kalsedon-granit-bazalt",
+   "Kalsedon, Granit, Bazalt"
+  ],
+  [
+   "cam-peyzaj-urunleri",
+   "Cam Peyzaj Ürünleri"
+  ],
+  [
+   "el-yapimi-peyzaj-urunleri",
+   "Doğal Taştan El Yapımı Peyzaj Ürünleri"
+  ],
+  [
+   "el-yapimi-peyzaj-urunleri/oturma-grubu-masa-sehpa",
+   "Oturma Grubu, Masa, Sehpa"
+  ],
+  [
+   "el-yapimi-peyzaj-urunleri/cesme-havuz-fiskiye-bahce-lambasi",
+   "Çeşme, Havuz, Fıskiye, Bahçe Lambası"
+  ],
+  [
+   "el-yapimi-peyzaj-urunleri/saksi-ciceklik",
+   "Saksı, Çiçeklik"
+  ],
+  [
+   "akvaryum-taslari-ve-camlari",
+   "Akvaryum Taşları ve Camları"
+  ],
+  [
+   "doseme-ve-kaplama-taslari",
+   "Ebatlı Döşeme ve Kaplama Taşları"
+  ],
+  [
+   "doseme-ve-kaplama-taslari/bazalt-fosil-adim-tasi",
+   "Bazalt, Fosil Adım Taşı"
+  ],
+  [
+   "doseme-ve-kaplama-taslari/traverten-harman-tugla",
+   "Traverten, Harman Tuğla"
+  ],
+  [
+   "doseme-ve-kaplama-taslari/kayrak-sari-duvar-tasi",
+   "Kayrak, Sarı Duvar Taşı"
+  ],
+  [
+   "doseme-ve-kaplama-taslari/granit-can-tasi",
+   "Granit, Çan Taşı"
+  ],
+  [
+   "doseme-ve-kaplama-taslari/absolute-black-siyah-kalibre",
+   "Absolute Black, Siyah Kalibre"
+  ],
+  [
+   "doseme-ve-kaplama-taslari/mermer-elazig-visne-mermeri",
+   "Mermer, Elazığ Vişne Mermeri"
+  ],
+  [
+   "dogal-tas-heykel-ve-sutunlar",
+   "Doğal Taş Heykel ve Sütunlar"
+  ],
+  [
+   "dogal-kayaclar",
+   "Doğal Kayaçlar"
+  ],
+  [
+   "dogal-kayaclar/agac-fosili-ve-serpantin-tasi",
+   "Ağaç Fosili ve Serpantin Taşı"
+  ],
+  [
+   "dogal-kayaclar/bazalt-ve-oniks-tasi",
+   "Bazalt ve Oniks Taşı"
+  ],
+  [
+   "dogal-kayaclar/gnays-ve-falez-tasi",
+   "Gnays ve Falez Taşı"
+  ],
+  [
+   "dogal-kayaclar/meteor-tasi",
+   "Meteor Taşı"
+  ],
+  [
+   "dogal-kayaclar/dere-makarna-lav-tasi",
+   "Dere, Makarna, Lav Taşı"
+  ],
+  [
+   "dogal-kayaclar/granit-ve-konglomera-tasi",
+   "Granit ve Konglomera Taşı"
+  ],
+  [
+   "dogal-kayaclar/renkli-mermer-paspala-tasi",
+   "Renkli Mermer, Paspala Taşı"
+  ],
+  [
+   "antik-taslar",
+   "Antik Taşlar"
+  ],
+  [
+   "art-nouveau-heykel-ve-rolyefler",
+   "Doğal Taş Art Nouveau Heykel ve Rölyefler"
+  ],
+  [
+   "art-nouveau-heykel-ve-rolyefler/hayvan-temali",
+   "Hayvan Temalı Bank, Heykel ve Rölyefler"
+  ],
+  [
+   "art-nouveau-heykel-ve-rolyefler/esya-makine-muzik-aleti-temali",
+   "Eşya, Makine, Müzik Aleti, Sehpa Temalı Heykeller"
+  ],
+  [
+   "art-nouveau-heykel-ve-rolyefler/insan-ve-bitki-temali",
+   "İnsan ve Bitki Temalı Heykel ve Rölyefler"
+  ],
+  [
+   "art-nouveau-heykel-ve-rolyefler/soyut-heykeller",
+   "Soyut Heykeller"
+  ],
+  [
+   "kok-kutuk-metal-el-yapimi-urunler",
+   "Kök, Kütük, Metal Art Nouveau El Yapımı Ürünler"
+  ],
+  [
+   "bronz-peyzaj-urunleri",
+   "Bronz Peyzaj Ürünleri"
+  ],
+  [
+   "antika-urunler",
+   "Antika Ürünler"
+  ],
+  [
+   "antika-urunler/bronz-ve-bakir-dekorasyon-objeleri",
+   "Bronz ve Bakır Dekorasyon Objeleri"
+  ],
+  [
+   "antika-urunler/daktilo-ve-hesap-makineleri",
+   "Daktilo ve Hesap Makineleri"
+  ],
+  [
+   "antika-urunler/denizcilik-ekipmanlari",
+   "Denizcilik Ekipmanları"
+  ],
+  [
+   "antika-urunler/dikis-makineleri",
+   "Dikiş Makineleri"
+  ],
+  [
+   "antika-urunler/ahsap-kapi-pencere-ve-ayna",
+   "Ahşap Kapı, Pencere ve Ayna"
+  ],
+  [
+   "antika-urunler/muzik-aletleri-ve-radyo",
+   "Müzik Aletleri ve Radyo"
+  ],
+  [
+   "antika-urunler/soba",
+   "Soba"
+  ],
+  [
+   "antika-urunler/tarti-aletleri-terazi",
+   "Tartı Aletleri, Terazi"
+  ],
+  [
+   "antika-urunler/tahnit-hayvanlar",
+   "Tahnit Hayvanlar"
+  ],
+  [
+   "antika-urunler/para-kasalari",
+   "Para Kasaları"
+  ],
+  [
+   "antika-urunler/mobilya-masa-sandalye-koltuk-dolap",
+   "Mobilya, Masa, Sandalye, Koltuk, Dolap"
+  ],
+  [
+   "antika-urunler/cocuk-sandalyesi-arabasi-oyuncak",
+   "Çocuk Sandalyesi, Arabası, Oyuncak"
+  ],
+  [
+   "antika-urunler/biblo-saat-samdan-vazo-lamba",
+   "Biblo, Saat, Şamdan, Vazo, Lamba"
+  ],
+  [
+   "antika-urunler/ahsap-sutunlar",
+   "Ahşap Sütunlar"
+  ],
+  [
+   "antika-urunler/tablo-resim-yazi",
+   "Tablo, Resim, Yazı"
+  ],
+  [
+   "antika-urunler/endustriyel-alet-ve-makine",
+   "Endüstriyel Alet ve Makine"
+  ],
+  [
+   "cam-ve-seramik-koleksiyon",
+   "Cam ve Seramik Özel Koleksiyon Ürünleri"
+  ],
+  [
+   "cam-ve-seramik-koleksiyon/pasabahce-ozel-koleksiyon",
+   "Paşabahçe Özel Koleksiyon"
+  ],
+  [
+   "cam-ve-seramik-koleksiyon/seramik-ve-eski-cam",
+   "Seramik ve Eski Cam Ürünleri"
+  ],
+  [
+   "satilmis-urunler",
+   "Satılmış Ürünler"
+  ]
+ ],
+ "tr": {
+  "42": "cam-peyzaj-urunleri",
+  "43": "tamburlanmis-peyzaj-taslari",
+  "45": "tamburlanmis-peyzaj-taslari/dolomit-kalsit-mermer",
+  "49": "tamburlanmis-peyzaj-taslari/dolomit-kalsit-mermer",
+  "48": "tamburlanmis-peyzaj-taslari/dere-ve-cakil-taslari",
+  "51": "tamburlanmis-peyzaj-taslari/can-tasi-serpantin-siyah-angel",
+  "50": "tamburlanmis-peyzaj-taslari/can-tasi-serpantin-siyah-angel",
+  "56": "tamburlanmis-peyzaj-taslari/can-tasi-serpantin-siyah-angel",
+  "52": "tamburlanmis-peyzaj-taslari/kalsedon-granit-bazalt",
+  "44": "el-yapimi-peyzaj-urunleri",
+  "474": "el-yapimi-peyzaj-urunleri/oturma-grubu-masa-sehpa",
+  "475": "el-yapimi-peyzaj-urunleri/cesme-havuz-fiskiye-bahce-lambasi",
+  "476": "el-yapimi-peyzaj-urunleri/saksi-ciceklik",
+  "478": "akvaryum-taslari-ve-camlari",
+  "479": "doseme-ve-kaplama-taslari",
+  "37": "doseme-ve-kaplama-taslari/bazalt-fosil-adim-tasi",
+  "480": "doseme-ve-kaplama-taslari/traverten-harman-tugla",
+  "481": "doseme-ve-kaplama-taslari/kayrak-sari-duvar-tasi",
+  "482": "doseme-ve-kaplama-taslari/granit-can-tasi",
+  "484": "doseme-ve-kaplama-taslari/absolute-black-siyah-kalibre",
+  "2754": "doseme-ve-kaplama-taslari/mermer-elazig-visne-mermeri",
+  "617": "dogal-tas-heykel-ve-sutunlar",
+  "33": "dogal-kayaclar",
+  "726": "dogal-kayaclar/agac-fosili-ve-serpantin-tasi",
+  "727": "dogal-kayaclar/bazalt-ve-oniks-tasi",
+  "728": "dogal-kayaclar/gnays-ve-falez-tasi",
+  "729": "dogal-kayaclar/meteor-tasi",
+  "730": "dogal-kayaclar/dere-makarna-lav-tasi",
+  "1153": "dogal-kayaclar/granit-ve-konglomera-tasi",
+  "1161": "dogal-kayaclar/renkli-mermer-paspala-tasi",
+  "36": "antik-taslar",
+  "1035": "art-nouveau-heykel-ve-rolyefler",
+  "1037": "art-nouveau-heykel-ve-rolyefler",
+  "12": "art-nouveau-heykel-ve-rolyefler/hayvan-temali",
+  "654": "art-nouveau-heykel-ve-rolyefler/hayvan-temali",
+  "1036": "art-nouveau-heykel-ve-rolyefler/esya-makine-muzik-aleti-temali",
+  "1038": "art-nouveau-heykel-ve-rolyefler/insan-ve-bitki-temali",
+  "1039": "art-nouveau-heykel-ve-rolyefler/soyut-heykeller",
+  "14": "kok-kutuk-metal-el-yapimi-urunler",
+  "13": "bronz-peyzaj-urunleri",
+  "17": "antika-urunler",
+  "618": "antika-urunler",
+  "11": "antika-urunler",
+  "23": "antika-urunler",
+  "59": "antika-urunler/bronz-ve-bakir-dekorasyon-objeleri",
+  "60": "antika-urunler/daktilo-ve-hesap-makineleri",
+  "61": "antika-urunler/denizcilik-ekipmanlari",
+  "62": "antika-urunler/dikis-makineleri",
+  "63": "antika-urunler/ahsap-kapi-pencere-ve-ayna",
+  "65": "antika-urunler/muzik-aletleri-ve-radyo",
+  "66": "antika-urunler/soba",
+  "67": "antika-urunler/tarti-aletleri-terazi",
+  "68": "antika-urunler/tahnit-hayvanlar",
+  "69": "antika-urunler/para-kasalari",
+  "64": "antika-urunler/mobilya-masa-sandalye-koltuk-dolap",
+  "485": "antika-urunler/cocuk-sandalyesi-arabasi-oyuncak",
+  "620": "antika-urunler/biblo-saat-samdan-vazo-lamba",
+  "621": "antika-urunler/ahsap-sutunlar",
+  "622": "antika-urunler/tablo-resim-yazi",
+  "619": "antika-urunler/endustriyel-alet-ve-makine",
+  "243": "cam-ve-seramik-koleksiyon",
+  "623": "cam-ve-seramik-koleksiyon/pasabahce-ozel-koleksiyon",
+  "624": "cam-ve-seramik-koleksiyon/seramik-ve-eski-cam",
+  "18": "satilmis-urunler",
+  "116": "satilmis-urunler",
+  "117": "satilmis-urunler",
+  "118": "satilmis-urunler",
+  "119": "satilmis-urunler",
+  "120": "satilmis-urunler",
+  "121": "satilmis-urunler",
+  "122": "satilmis-urunler",
+  "123": "satilmis-urunler",
+  "124": "satilmis-urunler",
+  "125": "satilmis-urunler"
+ },
+ "en": {
+  "1214": "bronz-peyzaj-urunleri",
+  "1215": "kok-kutuk-metal-el-yapimi-urunler",
+  "1216": "antika-urunler",
+  "1481": "antika-urunler",
+  "1471": "antika-urunler/bronz-ve-bakir-dekorasyon-objeleri",
+  "1472": "antika-urunler/daktilo-ve-hesap-makineleri",
+  "1473": "antika-urunler/denizcilik-ekipmanlari",
+  "1474": "antika-urunler/dikis-makineleri",
+  "1475": "antika-urunler/ahsap-kapi-pencere-ve-ayna",
+  "1476": "antika-urunler/muzik-aletleri-ve-radyo",
+  "1477": "antika-urunler/soba",
+  "1478": "antika-urunler/tarti-aletleri-terazi",
+  "1479": "antika-urunler/tahnit-hayvanlar",
+  "1480": "antika-urunler/para-kasalari",
+  "1482": "antika-urunler/endustriyel-alet-ve-makine",
+  "2091": "antika-urunler/mobilya-masa-sandalye-koltuk-dolap",
+  "2092": "antika-urunler/cocuk-sandalyesi-arabasi-oyuncak",
+  "2093": "antika-urunler/biblo-saat-samdan-vazo-lamba",
+  "2094": "antika-urunler/ahsap-sutunlar",
+  "2095": "antika-urunler/tablo-resim-yazi",
+  "1218": "dogal-kayaclar",
+  "1498": "dogal-kayaclar/agac-fosili-ve-serpantin-tasi",
+  "1499": "dogal-kayaclar/bazalt-ve-oniks-tasi",
+  "1500": "dogal-kayaclar/gnays-ve-falez-tasi",
+  "1501": "dogal-kayaclar/meteor-tasi",
+  "1502": "dogal-kayaclar/dere-makarna-lav-tasi",
+  "1503": "dogal-kayaclar/granit-ve-konglomera-tasi",
+  "1504": "dogal-kayaclar/renkli-mermer-paspala-tasi",
+  "1219": "antik-taslar",
+  "1220": "cam-peyzaj-urunleri",
+  "1221": "tamburlanmis-peyzaj-taslari",
+  "1544": "tamburlanmis-peyzaj-taslari/dolomit-kalsit-mermer",
+  "1545": "tamburlanmis-peyzaj-taslari/dere-ve-cakil-taslari",
+  "1546": "tamburlanmis-peyzaj-taslari",
+  "1547": "tamburlanmis-peyzaj-taslari",
+  "1548": "tamburlanmis-peyzaj-taslari/can-tasi-serpantin-siyah-angel",
+  "1549": "tamburlanmis-peyzaj-taslari/kalsedon-granit-bazalt",
+  "1222": "el-yapimi-peyzaj-urunleri",
+  "1551": "el-yapimi-peyzaj-urunleri/oturma-grubu-masa-sehpa",
+  "1552": "el-yapimi-peyzaj-urunleri/cesme-havuz-fiskiye-bahce-lambasi",
+  "1553": "el-yapimi-peyzaj-urunleri/saksi-ciceklik",
+  "1223": "cam-ve-seramik-koleksiyon",
+  "1950": "cam-ve-seramik-koleksiyon/pasabahce-ozel-koleksiyon",
+  "1951": "cam-ve-seramik-koleksiyon/seramik-ve-eski-cam",
+  "1224": "akvaryum-taslari-ve-camlari",
+  "1225": "doseme-ve-kaplama-taslari",
+  "2014": "doseme-ve-kaplama-taslari/bazalt-fosil-adim-tasi",
+  "2015": "doseme-ve-kaplama-taslari/traverten-harman-tugla",
+  "2016": "doseme-ve-kaplama-taslari/kayrak-sari-duvar-tasi",
+  "2017": "doseme-ve-kaplama-taslari/granit-can-tasi",
+  "2018": "doseme-ve-kaplama-taslari/absolute-black-siyah-kalibre",
+  "2755": "doseme-ve-kaplama-taslari/mermer-elazig-visne-mermeri",
+  "1226": "dogal-tas-heykel-ve-sutunlar",
+  "1227": "art-nouveau-heykel-ve-rolyefler",
+  "2234": "art-nouveau-heykel-ve-rolyefler/hayvan-temali",
+  "2235": "art-nouveau-heykel-ve-rolyefler/esya-makine-muzik-aleti-temali",
+  "2236": "art-nouveau-heykel-ve-rolyefler",
+  "2237": "art-nouveau-heykel-ve-rolyefler/insan-ve-bitki-temali",
+  "2238": "art-nouveau-heykel-ve-rolyefler/soyut-heykeller",
+  "111": "antika-urunler",
+  "1217": "satilmis-urunler",
+  "1483": "satilmis-urunler",
+  "1484": "satilmis-urunler",
+  "1485": "satilmis-urunler",
+  "1486": "satilmis-urunler",
+  "1827": "satilmis-urunler",
+  "1828": "satilmis-urunler",
+  "1829": "satilmis-urunler",
+  "1830": "satilmis-urunler",
+  "1831": "satilmis-urunler",
+  "1832": "satilmis-urunler"
+ },
+ "pages_tr": {
+  "anasayfa": "/",
+  "site-haritasi": "/",
+  "tarihce": "/hakkimizda/",
+  "misyon--vizyon": "/hakkimizda/",
+  "biz-ne-yapiyoruz": "/hakkimizda/",
+  "kimler-bizimle-neden-calisiyor": "/hakkimizda/",
+  "neden-tas": "/tas-hakkinda/",
+  "tasla-neler-yapilabilir": "/tas-hakkinda/",
+  "tasin-tarihi": "/tas-hakkinda/",
+  "insan-kaynaklari-formu": "/insan-kaynaklari/",
+  "referanslar": "/projeler/",
+  "katalog": "/e-katalog/",
+  "iletisim": "/iletisim/",
+  "antik-esya-magazasi": "/urun-kategori/antika-urunler/",
+  "eski-eserler": "/urun-kategori/antika-urunler/",
+  "eskieserler": "/urun-kategori/antika-urunler/",
+  "yasal-uyari-ve-kullanim-kosullari": "/yasal-uyari/"
+ },
+ "pages_en": {
+  "homepage": "/",
+  "sitemap": "/",
+  "tarihce": "/hakkimizda/",
+  "mission--vision": "/hakkimizda/",
+  "what-do-we-do": "/hakkimizda/",
+  "who-works-with-us-why": "/hakkimizda/",
+  "why-stone": "/tas-hakkinda/",
+  "what-can-be-done-with-stone": "/tas-hakkinda/",
+  "history-of-stone": "/tas-hakkinda/",
+  "job-application-form": "/insan-kaynaklari/",
+  "referances": "/projeler/",
+  "e-catalogue": "/e-katalog/",
+  "contact": "/iletisim/",
+  "antique-shop": "/urun-kategori/antika-urunler/",
+  "legal-notice-and-terms-of-use": "/yasal-uyari/"
+ }
+}

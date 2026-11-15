@@ -1,0 +1,11 @@
+{
+  "1133": {
+    "slogan": "Doğal · Dayanıklı · Zamansız",
+    "aciklama": "Pürüzsüz, yuvarlatılmış yüzeyli birinci kalite beyaz doğal taş. Peyzaj, bahçe tasarımı ve dekoratif uygulamalar için temiz, şık bir görünüm ve uzun ömürlü kullanım sunar.",
+    "ebatlar": ["3–5 cm", "5–10 cm", "10–15 cm"],
+    "fob_usd_ton": 500,
+    "paketleme": true,
+    "gorseller_yerel": ["assets/img/stones.jpg", "assets/img/hero.jpg", "assets/img/shore.jpg"],
+    "ozellikler": [["Malzeme", "Doğal dolomit"], ["Renk", "Beyaz"], ["Yüzey", "Tamburlanmış (yuvarlatılmış, pürüzsüz)"], ["Ambalaj", "Big bag, 1.200–1.300 kg"], ["20 ft konteyner", "20 big bag ≈ 24–26 ton"], ["40 ft konteyner", "40 big bag ≈ 48–52 ton"], ["Teslim şekli", "FOB Ambarlı"]]
+  }
+}
