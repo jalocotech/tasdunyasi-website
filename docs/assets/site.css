@@ -98,9 +98,9 @@ section.block { padding: 56px 0; }
 .cta-row .wrap { padding-top: 48px; padding-bottom: 48px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between; }
 
 /* Liste / kategori */
-.crumb { font-size: 14px; color: var(--muted); padding: 20px 0 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.crumb { font-size: 14px; color: var(--muted); padding-top: 20px; display: flex; flex-wrap: wrap; gap: 6px; }
 .crumb a { color: var(--muted); } .crumb b { color: var(--navy); font-weight: 600; }
-.page-head { padding: 14px 0 22px; }
+.page-head { padding-top: 14px; padding-bottom: 22px; }
 .page-head h1 { font-weight: 800; font-size: clamp(30px, 4vw, 46px); text-transform: uppercase; }
 .page-head p { color: var(--muted); max-width: 720px; margin: 8px 0 0; }
 .subcats { margin-bottom: 26px; }

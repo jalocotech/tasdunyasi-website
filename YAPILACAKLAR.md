@@ -8,6 +8,7 @@ Durum: 15 Kasım 2026. Yeni site taslağı bu depoda; eski site (tasdunyasi.com.
 - [ ] `config.json`: WhatsApp numarası ve e-posta adresi girilecek (teklif formu bunlar olmadan çalışmaz)
 - [ ] Kapı numarası doğrulanacak (eski sitede 161, 163/1 ve "161 34075" olarak üç farklı yazılmış)
 - [ ] Ürün fotoğrafları eski sunucudan alınıp bu depoya taşınacak (şu an eski siteden bağlantıyla geliyor; eski sunucu kapanırsa görseller kaybolur)
+- [ ] Eski sitede de açılmayan ürün fotoğrafları var (ör. Tamburlanmış Dolomit, Kalsit, Mermer); yeni fotoğraf gerekli
 - [ ] `data/urunler.csv` gözden geçirilecek: yayından kalkacak ürünlerde `yayinda` sütunu `hayir` yapılacak, tekrarlanan ürünler (ör. 29 ayrı "Paşabahçe") birleştirilecek
 - [ ] Fiyat kararı: sitede fiyat görünecek mi? (`fiyat_goster`; şu an kapalı. Eski ürün açıklamalarındaki TL fiyatları da gizleniyor)
 - [ ] "Satılmış Ürünler" grubu (136 ürün) kalacak mı?
