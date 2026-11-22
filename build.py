@@ -94,7 +94,7 @@ def page(depth, title, body, desc='', active='', body_class='', canonical=''):
 <div class="topbar"><div class="wrap"><div>{tel}</div><div><a href="{r}e-katalog/">E-Katalog</a><a href="{r}urun-kategori/antika-urunler/">Antik Eşya Mağazası</a><a href="{r}sanal-tur/">360° Sanal Tur</a></div></div></div>
 <header class="header">
 <div class="wrap">
-<a class="logo" href="{r}" aria-label="Taş Dünyası ana sayfa"><img src="{r}assets/img/logo.jpg" alt="Taş Dünyası – Stone World"></a>
+<a class="logo" href="{r}" aria-label="Taş Dünyası ana sayfa"><img src="{CFG["eski_site"].rstrip("/")}/common/images/logo.png" onerror="this.onerror=null;this.src='{r}assets/img/logo.jpg'" width="280" height="68" alt="Taş Dünyası – Stone World"></a>
 <nav class="nav" aria-label="Ana menü">{nav_html}</nav>
 <div class="header-actions">
 <form class="search" action="{r}urunler/" method="get"><label class="sr" for="q">Ürün ara</label><input id="q" name="q" type="search" placeholder="Ürün ara"><button type="submit">Ara</button></form>
