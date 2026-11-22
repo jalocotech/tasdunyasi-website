@@ -191,7 +191,7 @@ def build_home():
 <h1>İstanbul'un içinde rengarenk bir dünya</h1>
 <p>Peyzaj, döşeme ve dekorasyon için doğal taş, kayaç ve cam. Kendi ocağımızdan, kendi tamburlama tesisimizden; Türkiye'ye ve dünyaya.</p>
 <div class="btns"><a class="btn btn-cta" href="iletisim/#teklif" data-ev="quote_click">Teklif İste</a><a class="btn btn-light" href="urunler/">Ürünleri İncele</a></div></div>
-<div class="hero-img"><img src="assets/img/showroom.jpg" alt="Taş Dünyası açık hava sergi alanı: sütunlar, çakıl taşları ve dekoratif ürünler" width="941" height="1672"><a class="hero-tag" href="urun/{feat["slug"]}/"><small>Öne çıkan ürün</small><b>{e(feat["ad"])} →</b></a></div>
+<div class="hero-img"><img src="assets/img/showroom.jpg" alt="Taş Dünyası açık hava sergi alanı: sütunlar, çakıl taşları ve dekoratif ürünler" width="941" height="1672"><a class="hero-tag" href="https://www.google.com/maps/search/?api=1&amp;query=Ta%C5%9F+D%C3%BCnyas%C4%B1+Kemerburgaz" target="_blank" rel="noopener" data-ev="directions_click"><small>Kemerburgaz, Eyüpsultan</small><b>Showroom'u ziyaret edin →</b></a></div>
 </div></section>
 <section class="stats"><div class="wrap">{''.join(f'<div class="stat" style="border-color:{c}"><b>{e(b)}</b><span>{e(s)}</span></div>' for b, s, c in stats)}</div></section>
 <section class="block"><div class="wrap">
