@@ -268,8 +268,10 @@ def build_products():
         local = o.get('gorseller_yerel', [])
         gallery = [r + g for g in local] + [img_url(i) for i in p['imgs']]
         main_img = f'<img data-main-img data-fallback src="{e(gallery[0])}" alt="{e(p["ad"])}">' if gallery else ''
+        multi = len(gallery) > 1
+        arrows = '<button type="button" class="gal-nav prev" data-prev aria-label="Önceki görsel">&#8249;</button><button type="button" class="gal-nav next" data-next aria-label="Sonraki görsel">&#8250;</button><span class="gal-count"><b data-gal-i>1</b> / ' + str(len(gallery)) + '</span>' if multi else ''
         thumbs = ''
-        if len(gallery) > 1:
+        if multi:
             thumbs = '<div class="thumbs">' + ''.join(f'<button type="button" data-thumb="{e(g)}" aria-pressed="{"true" if i == 0 else "false"}" aria-label="Görsel {i + 1}"><img loading="lazy" src="{e(g)}" alt=""></button>' for i, g in enumerate(gallery)) + '</div>'
         sizes = o.get('ebatlar') or ([t for t in p['tokens'] if re.search(r'\d\s*(x|X|-)\s*\d.*(cm|mm)$', t)] if len(p['tokens']) > 1 and parts[0] in ('tamburlanmis-peyzaj-taslari', 'cam-peyzaj-urunleri', 'akvaryum-taslari-ve-camlari') else [])
         size_html = ''
@@ -309,17 +311,17 @@ def build_products():
         wa_text = f'Merhaba, "{p["ad"]}" için fiyat ve numune bilgisi almak istiyorum.'
         body = f'''{crumb(trail)}
 <div class="wrap product" data-product="{e(p["ad"])}">
-<div class="product-media"><div class="product-main">{main_img}</div>{thumbs}</div>
+<div class="product-media"><div class="pm-gallery"><div class="product-main">{main_img}{arrows}</div>{thumbs}</div>
+<section class="info-block"><h2>Ürün bilgileri</h2>{spec_html}</section></div>
 <div class="product-info"><span class="kicker">{e(CATS[parts[0]])}</span><h1>{e(p["ad"])}</h1>{f'<span class="tagline">{e(o["slogan"])}</span>' if o.get("slogan") else ''}{f'<p style="margin:0;font-size:17px;color:#3C4B55">{e(desc)}</p>' if desc else ''}
 {size_html}
 <div class="quote-box">{box}<div class="note">Teslim: Kemerburgaz / FOB Ambarlı</div></div>
 <div class="btns"><a class="btn btn-cta" href="#teklif" data-ev="quote_click" data-urun="{e(p["ad"])}">Bu ürün için teklif iste</a><a class="btn btn-ghost" data-wa="{e(wa_text)}" data-urun="{e(p["ad"])}">WhatsApp</a><a class="btn btn-ghost" href="tel:{re.sub(r"[^+0-9]", "", PHONES[0])}" data-ev="phone_click" data-urun="{e(p["ad"])}">{PHONES[0]}</a></div>
-<span class="note">Numune ve Kemerburgaz'da yerinde görme için de yazabilirsiniz.</span></div>
+<section class="quote-card" id="teklif"><h2>Teklif isteyin</h2><p>Ürün ve ebat seçiminiz forma eklenir. Miktarı ve teslim yerini yazın, size dönelim.</p>{quote_form(r, p["ad"])}</section>
+</div>
 </div>
 {feats}
-<section class="wrap" style="padding:48px 24px"><h2 class="big" style="font-size:26px;margin-bottom:16px">Ürün bilgileri</h2><div style="max-width:760px">{spec_html}</div></section>
 {pack}
-<section class="wrap split" id="teklif" style="padding:56px 24px;align-items:flex-start"><div style="flex:1 1 300px"><h2 class="big" style="font-size:30px">Teklif isteyin</h2><p style="color:#3C4B55">Ürün ve ebat seçiminiz forma eklenir. Miktarı ve teslim yerini yazın, size dönelim.</p></div><div style="flex:2 1 520px">{quote_form(r, p["ad"])}</div></section>
 {rel_html}
 <div class="sticky-quote"><a class="btn btn-cta" href="#teklif">Teklif iste</a><a class="btn btn-ghost" data-wa="{e(wa_text)}">WhatsApp</a></div>'''
         d = f'{p["ad"]} – {CATS[cat]}. {", ".join(p["tokens"][:3])}'.strip(' .')

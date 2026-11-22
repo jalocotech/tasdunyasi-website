@@ -41,12 +41,25 @@
 
 	// --- Ürün galerisi ---
 	var main = document.querySelector('[data-main-img]');
-	document.querySelectorAll('[data-thumb]').forEach(function (b) {
-		b.addEventListener('click', function () {
-			main.src = b.getAttribute('data-thumb');
-			document.querySelectorAll('[data-thumb]').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
-		});
-	});
+	var thumbs = [].slice.call(document.querySelectorAll('[data-thumb]'));
+	var cur = 0;
+	function show(i) {
+		if (!thumbs.length || !main) return;
+		cur = (i + thumbs.length) % thumbs.length;
+		main.src = thumbs[cur].getAttribute('data-thumb');
+		thumbs.forEach(function (x, k) { x.setAttribute('aria-pressed', k === cur ? 'true' : 'false'); });
+		var n = document.querySelector('[data-gal-i]'); if (n) n.textContent = cur + 1;
+		thumbs[cur].scrollIntoView({ block: 'nearest', inline: 'center' });
+	}
+	thumbs.forEach(function (b, k) { b.addEventListener('click', function () { show(k); }); });
+	var pv = document.querySelector('[data-prev]'), nx = document.querySelector('[data-next]');
+	if (pv) pv.addEventListener('click', function () { show(cur - 1); });
+	if (nx) nx.addEventListener('click', function () { show(cur + 1); });
+	if (main && thumbs.length > 1) {
+		var sx = null;
+		main.parentNode.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
+		main.parentNode.addEventListener('touchend', function (e) { if (sx === null) return; var d = e.changedTouches[0].clientX - sx; if (Math.abs(d) > 40) show(cur + (d < 0 ? 1 : -1)); sx = null; }, { passive: true });
+	}
 
 	// --- Ebat ve yükleme seçimi → teklif formu ---
 	var state = { size: '', load: '' };
