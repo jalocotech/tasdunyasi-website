@@ -353,13 +353,68 @@ def simple(path, title, inner, active='', lead=''):
     write(f'{path}/index.html', page(1, f'{title} | Taş Dünyası', body, active=active, canonical=f'{path}/'))
 
 
+def about_page():
+    r = rel(1)
+    timeline = [
+        ('1973', 'Temeller atıldı', "Şirketler grubunun temelleri, bugünkü aynı ortaklar tarafından inşaat malzemeleri satışıyla atıldı. Kemerburgaz'daki Kemer Country villalarının inşaatında alt yüklenicilik de yapıldı."),
+        ('1992', 'Taş ocağı', 'Ruhsatlı alanda agrega üretimine yönelik taş ocağı işletmeciliği başladı.'),
+        ('2003', 'Taş Dünyası', "Doğal taş ticareti başladı. Taş Dünyası o günden bugüne aynı adreste, Kemerburgaz'da faaliyet gösteriyor."),
+        ('2016', 'İnşaat', "Haziran 2016'da 24 daire ve 4 dükkândan oluşan ilk konut projesine başlandı."),
+        ('2017', 'Yeni dönem', "Yakut Evleri (Arnavutköy / Bolluca) temmuzda teslim edildi. Taş Dünyası'nın ruhsatlı taş ocağı sahası rödovans sözleşmesiyle işletmeye alındı."),
+    ]
+    tl = ''.join(f'<li><b class="yr">{y}</b><div><h3>{e(t)}</h3><p>{e(d)}</p></div></li>' for y, t, d in timeline)
+    mission = [
+        'Sattığımız inşaat, peyzaj ve dekorasyon amaçlı doğal taş, cam, taş-ağaç-metal art nouveau heykel-rölyef ve antika ürünlerde duyulan güveni korumak ve ürünlerimizle müşterilerimizin yaşamına değer katmak.',
+        'Çalışmalarımızı kanunlara, sektör teamüllerine ve toplum geleneklerine uyumlu, yeniliklere açık yürütmeye özen göstermek.',
+        'Hızlı ve kesintisiz hizmet kalitesiyle, istenen tonajda ürün tedarik ederek müşteri memnuniyetini ön planda tutmak.',
+        'Çalışanlarımızın güvenliği için gereken tüm tedbirleri alarak daha sağlıklı ve güvenli bir ortamda çalışmalarını sağlamak.',
+    ]
+    vision = [
+        'Ülkemizdeki doğal taşların ekonomiye kazandırılmasına ve insanların yaşamına sağlık ve değer katmasına hizmet etmek.',
+        'Kalite standardı, uygun fiyat, kesintisiz ve istenen tonajda tedarik garantisiyle müşterileri memnun etmek.',
+        'Tedarikçilerden kaliteli ve çok çeşitli ürünleri uygun fiyatla temin edip müşterilere sunmak.',
+        'Yeniliklere açık ve yaratıcı olmak, en fazla çeşidi bir arada bulundurmak, doğal taş ve cam tamburlama tesisiyle marka bilinirliği ve itibarı yüksek şirket konumunu sürdürmek.',
+        'Tamburlanmış doğal taş, cam ve el yapımı art nouveau heykel, rölyef, fonksiyonel peyzaj ürünleri ve antikada ilk akla gelen şirketlerden biri olmaya devam etmek.',
+    ]
+    li = lambda xs: ''.join(f'<li>{e(x)}</li>' for x in xs)
+    does = [
+        ('Doğal taşlar', 'Tamburlanmamış veya ebatlı, çok çeşitli doğal taşlar ve farklı boyutlarda doğal kayaçlar.'),
+        ('Peyzaj camları', 'Kaya formu dahil, farklı ebatlarda tamburlanmamış peyzaj ve dekorasyon camları.'),
+        ('Kendi tamburlama tesisimiz', 'Kendi tesislerimizde tamburlanan, farklı ebat ve çeşitlilikte doğal taş ve cam.'),
+        ('Antik taş ve anforalar', 'Kullanılmış eski ve antik taşlar, anforalar.'),
+        ('El yapımı heykel ve rölyef', "Kadromuzdaki heykeltıraşlarca doğal taş, ağaç kökü, masif kütük ve metalden; kurumsal yazı, logo, portre, hayvan, çiçek, eşya ve soyut temalı, aynısı olmayan tek üretim eserler."),
+        ('Fonksiyonel peyzaj ürünleri', 'Bahçe oturma grubu, bank, saksı, çiçeklik, çeşme, havuz ve fıskiye gibi işlevsel ve yaratıcı ürünler.'),
+        ('Antika ürünler', 'Büyük bölümü müzayedelerden alınmış, 400’den fazla çeşide ulaşan antika koleksiyon.'),
+    ]
+    does_html = ''.join(f'<article class="do"><span class="no">{i + 1:02d}</span><h3>{e(t)}</h3><p>{e(d)}</p></article>' for i, (t, d) in enumerate(does))
+    stats = [('1973', 'kuruluş, aile şirketi'), ('10.000 m²', 'açık ve kapalı alan'), ('500+', 'ürün çeşidi'), ('400+', 'antika ürün çeşidi')]
+    stats_html = ''.join(f'<div><b>{e(a)}</b><span>{e(b)}</span></div>' for a, b in stats)
+    body = f'''{crumb([("Ana Sayfa", r), ("Hakkımızda", "")])}
+<section class="ab-hero"><div class="wrap ab-grid">
+<div><span class="kicker">Hakkımızda</span><h1>1973'ten bu yana doğal taş, madencilik, peyzaj ve inşaat</h1>
+<p class="lead">Taş Dünyası, aile şirketleri olan bir grubun parçası. Ortakların 40 yılı aşan ticaret hayatında madencilik, doğal taş, peyzaj ve inşaat sektörlerinde deneyim ile çok değerli bir müşteri ve tedarikçi çevresi oluştu.</p>
+<p class="lead">2003'ten beri aynı adreste, İstanbul Kemerburgaz'da, Mimar Sinan'ın bugünkü hâlini verdiği tarihî Uzun Kemer'e bitişik 10.000 m² açık ve kapalı alanda faaliyet gösteriyoruz. Doğal taş ve cam tamburlama tesislerimiz, aynısı olmayan tek üretim art nouveau anlayışımız ve 500'ü aşan ürün çeşidimizle İstanbul'da tekiz.</p></div>
+<div class="ab-photo"><img src="{r}assets/img/showroom.jpg" alt="Taş Dünyası Kemerburgaz sergi alanı" loading="eager"></div>
+</div></section>
+<section class="ab-stats"><div class="wrap">{stats_html}</div></section>
+<section class="ab-sec"><div class="wrap"><span class="kicker">Tarihçe</span><h2 class="sec-h">Yarım yüzyıla yaklaşan yolculuk</h2><ol class="timeline">{tl}</ol></div></section>
+<section class="ab-mv"><div class="wrap mv-grid">
+<div class="mv"><span class="kicker">Misyonumuz</span><h2>Güveni korumak, değer katmak</h2><ul>{li(mission)}</ul></div>
+<div class="mv alt"><span class="kicker">Vizyonumuz</span><h2>Taşta ilk akla gelen şirket</h2><ul>{li(vision)}</ul></div>
+</div></section>
+<section class="ab-sec"><div class="wrap"><span class="kicker">Faaliyetlerimiz</span><h2 class="sec-h">Biz ne yapıyoruz?</h2>
+<p class="ab-intro">Türkiye'nin her bölgesinden ve diğer ülkelerdeki tedarikçilerimizden temin ettiğimiz; inşaat, peyzaj, iç ve dış mekân dekorasyonu, döşeme ve kaplamada kullanılan ürünleri sunuyoruz.</p>
+<div class="does">{does_html}</div>
+<div class="ab-note"><b>Müşterilerimize sunduğumuz güvence:</b> Kesintisiz ve aynı kalitede tedarik, değişmeyen sözleşme fiyatı ve yüksek tonajda tedarik garantisi. Taş Dünyası uygulama yapmıyor; talep edilirse yıllardır birlikte çalıştığımız uygulamacı usta ve esnaf çözüm ortaklarımızı projenize yönlendiriyoruz.</div></div></section>
+<section class="ab-sec"><div class="wrap"><span class="kicker">Grup şirketleri</span><h2 class="sec-h">Aynı çatı altında</h2>
+<div class="group"><div><h3>Taş Dünyası İnşaat</h3><p>Konut projeleri. İlk proje Yakut Evleri (24 daire, 4 dükkân), temmuz 2017'de teslim edildi.</p></div>
+<div><h3>Öztaş ve İlkdal</h3><p>1992'den bu yana Göktürk'teki ruhsatlı ocaklarında taş ocağı (agrega) işletmeciliği yapıyor.</p></div></div></div></section>
+<section class="pdp-quote ab-cta"><div class="wrap" style="display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between"><div><h2 style="margin:0 0 6px">Projeniz için konuşalım</h2><p class="pq-text" style="margin:0;color:#DCE6EC">Showroom ve stok sahamızı Kemerburgaz'da gezebilir, fiyat ve numune için yazabilirsiniz.</p></div><div class="btns"><a class="btn btn-cta" href="{r}iletisim/#teklif" data-ev="quote_click">Teklif iste</a><a class="btn btn-light" href="{r}referanslar/">Referanslar</a></div></div></section>'''
+    write('hakkimizda/index.html', page(1, 'Hakkımızda | Taş Dünyası', body, desc="1973'ten bu yana doğal taş, madencilik, peyzaj ve inşaat. Taş Dünyası'nın tarihçesi, misyonu, vizyonu ve faaliyetleri.", active='about', body_class='about', canonical='hakkimizda/'))
+
+
 def build_pages():
-    simple('hakkimizda', 'Hakkımızda', '''<div class="prose">
-<p>Taş Dünyası'nın da içinde yer aldığı şirketler grubunun temelleri, bugünkü aynı ortaklar tarafından 1973 yılında inşaat malzemeleri satışıyla atıldı. Grup; 1992'de ruhsatlı alanında agrega üretimine yönelik taş ocağı, 2003'te doğal taş ticareti, 2016'da inşaat ve 2017'de ruhsatlı taş ocağı sahasının işletmeye alınmasıyla bugünkü halini aldı.</p>
-<h2>Biz ne yapıyoruz?</h2>
-<p>Türkiye'nin her bölgesinden ve diğer ülkelerdeki tedarikçilerimizden temin ettiğimiz; inşaat, peyzaj, iç ve dış mekan dekorasyonu, döşeme ve kaplamada kullanılan doğal taşları, doğal kayaçları, peyzaj ve dekorasyon camlarını sunuyoruz. Kendi tesisimizde farklı ebatlarda taş ve cam tamburluyor; kadromuzdaki heykeltıraşlarla doğal taş, ağaç kökü, kütük ve metalden el yapımı ürünler üretiyoruz.</p>
-<p><span class="todo">Düzenlenecek: Misyon &amp; vizyon, "Kimler bizimle neden çalışıyor?" ve "Taş hakkında" metinleri eski siteden aktarılacak.</span></p>
-<div class="btns"><a class="btn btn-cta" href="{r}iletisim/#teklif">Teklif iste</a><a class="btn btn-ghost" href="{r}referanslar/">Referanslar</a></div></div>''', active='about', lead='1973\'ten bu yana doğal taş, madencilik, peyzaj ve inşaat.')
+    about_page()
     refs = ''.join(f'<div class="ref">{e(x)}</div>' for x in CFG['referanslar'])
     simple('referanslar', 'Referanslar', f'''<div class="refs">{refs}</div>
 <div class="panel" style="margin-top:24px;border-left:4px solid var(--blue)"><b>Sanat dünyasında:</b> Heykeltıraş Adrián Villar Rojas'ın İtalya ContemporaryArt Torino fuarındaki sergisinde kullanılan doğal kayaçların büyük bölümü Taş Dünyası'ndan temin edildi.</div>

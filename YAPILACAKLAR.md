@@ -13,7 +13,8 @@ Durum: 15 Kasım 2026. Yeni site taslağı bu depoda; eski site (tasdunyasi.com.
 - [ ] Fiyat kararı: sitede fiyat görünecek mi? (`fiyat_goster`; şu an kapalı. Eski ürün açıklamalarındaki TL fiyatları da gizleniyor)
 - [ ] "Satılmış Ürünler" grubu (136 ürün) kalacak mı?
 - [ ] Yasal uyarı ve KVKK aydınlatma metni (hukuk onayıyla)
-- [ ] Hakkımızda, misyon-vizyon ve "Taş hakkında" metinleri eski siteden aktarılacak
+- [x] Hakkımızda: tarihçe, misyon, vizyon, biz ne yapıyoruz eski siteden aktarıldı
+- [ ] "Kimler bizimle neden çalışıyor?" ve "Taş hakkında" (Neden taş / Taşla neler yapılabilir / Taşın tarihi) metinleri aktarılacak
 - [ ] Logo dosyasının aslı (vektör/yüksek çözünürlük) eklenecek; şu anki görsel broşürden kırpıldı
 
 ### İyileştirme
