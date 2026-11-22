@@ -289,7 +289,7 @@ table.specs th { width: 40%; color: var(--muted); font-weight: 600; }
 }
 
 /* ===== Hakkımızda ===== */
-.about { background: #E1E8E8; }
+.about { --ground: #E1E8E8; --paper: #EBF0F0; background: #E1E8E8; }
 .ab-hero { background: var(--navy); color: #fff; padding: 48px 0 56px; }
 .ab-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 48px; align-items: center; }
 .ab-hero .kicker { color: var(--accent-2); }
