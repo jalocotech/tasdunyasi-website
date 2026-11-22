@@ -1,7 +1,7 @@
 /* Taş Dünyası — statik site stilleri */
 :root {
-	--navy: #16303F; --navy-2: #1E3F52; --ink: #1B2A33; --muted: #5A6872; --line: #E2DACB;
-	--ground: #F4F0E9; --paper: #FFFFFF; --cta: #A65F2B; --accent-2: #E3B27A; --blue: #C9B79C; --green: #8A9A7B; --orange: #A65F2B;
+	--navy: #16303F; --navy-2: #1E3F52; --ink: #1B2A33; --muted: #5A6872; --line: #D8E2E2;
+	--ground: #F1F4F4; --paper: #FFFFFF; --cta: #1F7A78; --accent-2: #8ED1CC; --blue: #B5D6D3; --green: #5FB3AD; --orange: #1F7A78;
 	--head: 'Manrope', system-ui, sans-serif; --body: 'Manrope', system-ui, sans-serif; --sub: 'Raleway', 'Manrope', system-ui, sans-serif;
 }
 * { box-sizing: border-box; }
@@ -33,7 +33,7 @@ h1, h2 { font-family: var(--head); } h3 { font-family: var(--sub); } h1, h2, h3 
 .header { background: var(--navy-2); color: #fff; }
 .header .nav a { color: #fff; }
 .header .nav a:hover { color: var(--accent-2); }
-.header .logo img { background: #fff; padding: 5px 8px; border-radius: 4px; height: 56px; }
+.header .logo img { height: 56px; width: auto; }
 .header .wrap {  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 32px; padding-top: 14px; padding-bottom: 14px; }
 .logo img { height: 60px; width: auto; }
 .nav { display: flex; flex-wrap: wrap; gap: 6px 26px; font-family: var(--sub); font-weight: 600; font-size: 15px; }
@@ -176,7 +176,7 @@ table.specs th { width: 40%; color: var(--muted); font-weight: 600; }
 	.topbar .wrap > div:first-child a:not(:first-child), .topbar .wrap > div:last-child a:not(:first-child) { display: none; }
 	.header { position: sticky; top: 0; z-index: 60; }
 	.header .wrap { flex-wrap: nowrap; gap: 10px; padding-top: 8px; padding-bottom: 8px; }
-	.logo { margin-right: auto; } .header .logo img { height: 40px; padding: 3px 6px; }
+	.logo { margin-right: auto; } .header .logo img { height: 40px; }
 	.header-actions .btn { white-space: nowrap; }
 	.nav, .header-actions .search, .header-actions [data-wa] { display: none; }
 	.header-actions .btn { min-height: 40px; height: 40px; padding: 0 14px; font-size: 14px; }
