@@ -1,7 +1,7 @@
 /* Taş Dünyası — statik site stilleri */
 :root {
-	--navy: #16303F; --navy-2: #1E3F52; --ink: #1B2A33; --muted: #5A6872; --line: #DDE2E3;
-	--ground: #F5F6F4; --paper: #FFFFFF; --cta: #C93A0C; --blue: #0488DB; --green: #06A75B; --orange: #F74D1C;
+	--navy: #16303F; --navy-2: #1E3F52; --ink: #1B2A33; --muted: #5A6872; --line: #E2DACB;
+	--ground: #F4F0E9; --paper: #FFFFFF; --cta: #A65F2B; --accent-2: #E3B27A; --blue: #C9B79C; --green: #8A9A7B; --orange: #A65F2B;
 	--head: 'Manrope', system-ui, sans-serif; --body: 'Manrope', system-ui, sans-serif; --sub: 'Raleway', 'Manrope', system-ui, sans-serif;
 }
 * { box-sizing: border-box; }
@@ -30,11 +30,14 @@ h1, h2 { font-family: var(--head); } h3 { font-family: var(--sub); } h1, h2, h3 
 .topbar .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; padding-top: 9px; padding-bottom: 9px; }
 .topbar a { color: #DCE6EC; } .topbar a:hover { color: #fff; }
 .topbar div { display: flex; flex-wrap: wrap; gap: 6px 20px; }
-.header { background: var(--paper); }
-.header .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 32px; padding-top: 14px; padding-bottom: 14px; }
+.header { background: var(--navy-2); color: #fff; }
+.header .nav a { color: #fff; }
+.header .nav a:hover { color: var(--accent-2); }
+.header .logo img { background: #fff; padding: 5px 8px; border-radius: 4px; height: 56px; }
+.header .wrap {  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 32px; padding-top: 14px; padding-bottom: 14px; }
 .logo img { height: 60px; width: auto; }
 .nav { display: flex; flex-wrap: wrap; gap: 6px 26px; font-family: var(--sub); font-weight: 600; font-size: 15px; }
-.nav a.on { color: var(--cta); }
+.header .nav a.on { color: var(--accent-2); }
 .header-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 .search { display: flex; }
 .search input { height: 44px; width: 190px; border: 1px solid #C8D0D4; border-radius: 4px 0 0 4px; padding: 0 14px; font: inherit; font-size: 14px; background: var(--ground); }
@@ -173,11 +176,12 @@ table.specs th { width: 40%; color: var(--muted); font-weight: 600; }
 	.topbar .wrap > div:first-child a:not(:first-child), .topbar .wrap > div:last-child a:not(:first-child) { display: none; }
 	.header { position: sticky; top: 0; z-index: 60; }
 	.header .wrap { flex-wrap: nowrap; gap: 10px; padding-top: 8px; padding-bottom: 8px; }
-	.logo { margin-right: auto; } .logo img { height: 44px; }
+	.logo { margin-right: auto; } .header .logo img { height: 40px; padding: 3px 6px; }
+	.header-actions .btn { white-space: nowrap; }
 	.nav, .header-actions .search, .header-actions [data-wa] { display: none; }
 	.header-actions .btn { min-height: 40px; height: 40px; padding: 0 14px; font-size: 14px; }
-	.menu-btn { display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 44px; height: 44px; padding: 0 11px; border: 1px solid #C8D0D4; border-radius: 4px; background: var(--ground); cursor: pointer; }
-	.menu-btn span { display: block; height: 2px; background: var(--navy); transition: transform .2s, opacity .2s; }
+	.menu-btn { display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 44px; height: 44px; padding: 0 11px; border: 1px solid rgba(255,255,255,.4); border-radius: 4px; background: transparent; cursor: pointer; }
+	.menu-btn span { display: block; height: 2px; background: #fff; transition: transform .2s, opacity .2s; }
 	.menu-btn[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 	.menu-btn[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 	.menu-btn[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
@@ -191,7 +195,7 @@ table.specs th { width: 40%; color: var(--muted); font-weight: 600; }
 	.drawer-tel a { font-weight: 600; font-size: 16px; padding: 6px 0; }
 	.drawer .btn { width: 100%; justify-content: center; }
 }
-@media (max-width: 380px) { .header-actions .btn { padding: 0 10px; font-size: 13px; } .logo img { height: 38px; } }
+@media (max-width: 380px) { .header-actions .btn { padding: 0 10px; font-size: 13px; } .header .logo img { height: 36px; } }
 .sticky-quote { display: none; }
 @media (max-width: 720px) {
 	.form { grid-template-columns: 1fr; }

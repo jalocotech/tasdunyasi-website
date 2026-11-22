@@ -180,7 +180,7 @@ def crumb(items):
 def build_home():
     r = ''
     feat = next((p for p in products if p['id'] == CFG['one_cikan_urun']), products[0])
-    stats = [("1973'ten beri", 'İnşaat, madencilik ve doğal taşta aile şirketi', '#0488DB'), ('Kendi taş ocağı', 'Ruhsatlı sahadan doğrudan tedarik', '#06A75B'), ('Kendi tamburlama tesisi', 'Ebat ve renk seçeneğiyle üretim', '#F74D1C'), ('FOB Ambarlı', 'Big bag ve konteyner ile ihracat', '#16303F')]
+    stats = [("1973'ten beri", 'İnşaat, madencilik ve doğal taşta aile şirketi', 'var(--blue)'), ('Kendi taş ocağı', 'Ruhsatlı sahadan doğrudan tedarik', 'var(--green)'), ('Kendi tamburlama tesisi', 'Ebat ve renk seçeneğiyle üretim', 'var(--orange)'), ('FOB Ambarlı', 'Big bag ve konteyner ile ihracat', '#16303F')]
     others = [c for c in TOP if c not in MAIN8 and c != SOLD]
     refs = CFG['referanslar'][:12]
     fo = feat['ozel']
