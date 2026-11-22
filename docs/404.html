@@ -22,6 +22,7 @@
 <form class="search" action="/tasdunyasi-website/urunler/" method="get"><label class="sr" for="q">Ürün ara</label><input id="q" name="q" type="search" placeholder="Ürün ara"><button type="submit">Ara</button></form>
 <a class="btn btn-ghost" data-wa="">WhatsApp</a>
 <a class="btn btn-cta" href="/tasdunyasi-website/iletisim/#teklif" data-ev="quote_click">Teklif İste</a>
+
 </div>
 <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menüyü aç"><span></span><span></span><span></span></button>
 </div>
@@ -35,7 +36,7 @@
 </div>
 </header>
 <main>
-<div class="wrap page-head" style="padding:64px 24px"><h1>Sayfa bulunamadı</h1><p id="msg">Aradığınız sayfa taşınmış olabilir.</p><div class="btns" style="margin-top:18px"><a class="btn btn-navy" href="/tasdunyasi-website/urunler/">Ürünlere git</a><a class="btn btn-ghost" href="/tasdunyasi-website/">Ana sayfa</a></div></div>
+<div class="wrap page-head" style="padding:64px 24px"><h1>Sayfa bulunamadı <small style="display:block;font-size:.55em;opacity:.7;margin-top:6px">Page not found</small></h1><p id="msg">Aradığınız sayfa taşınmış olabilir. / The page you are looking for may have moved.</p><div class="btns" style="margin-top:18px"><a class="btn btn-navy" href="/tasdunyasi-website/urunler/">Ürünlere git</a><a class="btn btn-ghost" href="/tasdunyasi-website/">Ana sayfa</a><a class="btn btn-ghost" href="/tasdunyasi-website/en/">English site</a></div></div>
 <script>
 (function(){
   var base="/tasdunyasi-website"; var path=decodeURIComponent(location.pathname); if(base&&path.indexOf(base)===0) path=path.slice(base.length);
@@ -43,14 +44,14 @@
   function go(t){ location.replace(base+'/'+String(t).replace(/^\//,'')); }
   if(kat) return go(kat);
   if(!m) return;
-  document.getElementById('msg').textContent='Yeni adrese yönlendiriliyorsunuz…';
+  document.getElementById('msg').textContent='Yeni adrese yönlendiriliyorsunuz… / Redirecting…';
   fetch(base+'/assets/legacy.json').then(function(r){return r.json()}).then(function(L){
-    var lang=m[1].toLowerCase()==='tr-tr'?'tr':'en'; var segs=(m[2]||'').split('/').filter(Boolean); if(!segs.length) return go('');
+    var lang=m[1].toLowerCase()==='tr-tr'?'tr':'en'; var segs=(m[2]||'').split('/').filter(Boolean); if(!segs.length) return go(lang==='tr'?'':'en/');
     var ids=segs.slice(1).filter(function(s){return /^\d+$/.test(s)&&s.replace(/^0+/,'')!==''}).map(function(s){return s.replace(/^0+/,'')}).reverse();
     for(var i=0;i<ids.length;i++) if(L[lang][ids[i]]) return go(L[lang][ids[i]]);
     var slug=segs[0].toLowerCase().replace(/ı/g,'i').replace(/ğ/g,'g').replace(/ü/g,'u').replace(/ş/g,'s').replace(/ö/g,'o').replace(/ç/g,'c').replace(/[^a-z0-9-]+/g,'');
     var pages=lang==='tr'?L.pages_tr:L.pages_en; if(pages[slug]) return go(pages[slug]);
-    go(segs[1]==='3'||segs[1]==='1199'?'urunler/':'');
+    go(segs[1]==='3'||segs[1]==='1199'?(lang==='tr'?'urunler/':'en/products/'):(lang==='tr'?'':'en/'));
   });
 })();
 </script>

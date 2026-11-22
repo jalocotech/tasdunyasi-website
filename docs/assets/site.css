@@ -38,6 +38,9 @@ h1, h2 { font-family: var(--head); } h3 { font-family: var(--sub); } h1, h2, h3 
 .logo img { height: 60px; width: auto; }
 .nav { display: flex; flex-wrap: wrap; gap: 6px 26px; font-family: var(--sub); font-weight: 600; font-size: 15px; }
 .header .nav a.on { color: var(--accent-2); }
+.header .lang { font-family: var(--sub); font-weight: 700; font-size: 13px; letter-spacing: .06em; color: #fff; border: 1px solid rgba(255,255,255,.45); border-radius: 8px; padding: 0 11px; height: 44px; display: inline-flex; align-items: center; }
+.header .lang:hover { background: #fff; color: var(--navy); }
+.drawer-sub .lang { font-weight: 700; color: var(--navy); }
 .header-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 .search { display: flex; }
 .search input { height: 44px; width: 190px; border: 1px solid #C8D0D4; border-radius: 4px 0 0 4px; padding: 0 14px; font: inherit; font-size: 14px; background: var(--ground); }
@@ -185,7 +188,7 @@ table.specs th { width: 40%; color: var(--muted); font-weight: 600; }
 	.header .wrap { flex-wrap: nowrap; gap: 10px; padding-top: 8px; padding-bottom: 8px; }
 	.logo { margin-right: auto; } .header .logo img { height: 40px; }
 	.header-actions .btn { white-space: nowrap; }
-	.nav, .header-actions .search, .header-actions [data-wa] { display: none; }
+	.nav, .header-actions .search, .header-actions [data-wa], .header-actions .lang { display: none; }
 	.header-actions .btn { min-height: 40px; height: 40px; padding: 0 14px; font-size: 14px; }
 	.menu-btn { display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 44px; height: 44px; padding: 0 11px; border: 1px solid rgba(255,255,255,.4); border-radius: 4px; background: transparent; cursor: pointer; }
 	.menu-btn span { display: block; height: 2px; background: #fff; transition: transform .2s, opacity .2s; }

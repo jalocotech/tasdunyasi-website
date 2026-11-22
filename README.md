@@ -12,6 +12,16 @@ Statik site. E-ticaret yok: ürünler katalog olarak listelenir, ziyaretçi tekl
 3. Bir ürüne özel açıklama, ebat ve paketleme bilgisi `data/ozel.json` içinde, ürün `id`'siyle.
 4. `python3 build.py` komutu `docs/` klasörünü yeniden üretir. Değişiklikler `main` dalına gönderilince site güncellenir.
 
+## İngilizce sürüm
+
+`build.py` siteyi iki dilde üretir: Türkçe kökte, İngilizce `/en/` altında (`/en/products/`, `/en/about/` …). Her sayfada TR/EN düğmesi ve hreflang var.
+
+- Ürün adları: `data/en_names_*.txt` (`Türkçe ad = English name`)
+- Kategori adları: `data/en_cats.json`
+- Ölçü ve not metinleri: `tools/en_tokens.py` çalıştırılır, düzeltmeler `data/en_tokens_override.json` içindedir; çıktı `data/en_tokens.json`
+- Ürüne özel içerik: `data/ozel.json` içinde ürünün `en` alanı
+- Yeni ürün eklenirse adı `en_names_*.txt` dosyasına eklenmelidir; yoksa Türkçe adı görünür.
+
 ## Klasörler
 
 | Yol | İçerik |

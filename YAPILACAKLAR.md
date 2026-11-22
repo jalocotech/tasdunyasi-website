@@ -21,7 +21,7 @@ Durum: 15 Kasım 2026. Yeni site taslağı bu depoda; eski site (tasdunyasi.com.
 - [ ] Diğer ihracat ürünleri için `data/ozel.json` kayıtları (ebat, ambalaj, açıklama; dolomit örnek olarak hazır)
 - [ ] Referans logoları ve proje fotoğrafları
 - [ ] Güncel PDF katalog ve sanal tur dosyalarının taşınması
-- [ ] İngilizce sürüm (eski sitede ~850 İngilizce sayfa var)
+- [x] İngilizce sürüm yapıldı (/en/). Çeviriler taslaktır; site sahibi veya çevirmen gözden geçirmeli, özellikle ürün adları ve hakkımızda metinleri
 - [ ] GA4 ölçüm kodu (site olayları göndermeye hazır: quote_click, whatsapp_click, phone_click, generate_lead)
 
 ### Yayına alma

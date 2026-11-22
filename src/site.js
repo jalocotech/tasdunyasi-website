@@ -2,6 +2,8 @@
 (function () {
 	'use strict';
 	var cfg = window.TD || {};
+	var t = cfg.t || {};
+	var TX = function (k, d) { return t[k] || d; };
 	var root = document.documentElement.getAttribute('data-root') || '';
 
 	function track(name, params) {
@@ -16,7 +18,7 @@
 		function set(open) {
 			menu.hidden = !open;
 			btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-			btn.setAttribute('aria-label', open ? 'Menüyü kapat' : 'Menüyü aç');
+			btn.setAttribute('aria-label', open ? TX('menuClose', 'Menüyü kapat') : TX('menuOpen', 'Menüyü aç'));
 		}
 		btn.addEventListener('click', function () { set(menu.hidden); });
 		menu.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
@@ -28,7 +30,7 @@
 	var wa = digits(cfg.whatsapp);
 	document.querySelectorAll('[data-wa]').forEach(function (a) {
 		if (!wa) { a.hidden = true; return; }
-		var text = a.getAttribute('data-wa') || 'Merhaba, ürünleriniz hakkında bilgi almak istiyorum.';
+		var text = a.getAttribute('data-wa') || TX('waDefault', 'Merhaba, ürünleriniz hakkında bilgi almak istiyorum.');
 		a.href = 'https://wa.me/' + wa + '?text=' + encodeURIComponent(text);
 		a.target = '_blank'; a.rel = 'noopener';
 		a.addEventListener('click', function () { track('whatsapp_click', { urun: a.getAttribute('data-urun') || '' }); });
@@ -87,7 +89,7 @@
 	group('[data-size]', 'size');
 	group('[data-load]', 'load', function (b) {
 		var bags = b.getAttribute('data-bags'), min = parseFloat(b.getAttribute('data-min')), max = parseFloat(b.getAttribute('data-max'));
-		var f = function (n) { return String(n).replace('.', ','); };
+		var f = function (n) { return String(n).replace('.', TX('dec', ',')); };
 		var e1 = document.querySelector('[data-load-bags]'), e2 = document.querySelector('[data-load-tons]'), e3 = document.querySelector('[data-load-value]');
 		if (e1) e1.textContent = bags;
 		if (e2) e2.textContent = f(min) + '–' + f(max) + ' t';
@@ -108,11 +110,11 @@
 		var bWa = form.querySelector('[data-send="wa"]'), bMail = form.querySelector('[data-send="mail"]');
 		if (bWa && !wa) bWa.hidden = true;
 		if (bMail && !mail) bMail.hidden = true;
-		if (!wa && !mail && msg) msg.textContent = 'Taslak: WhatsApp numarası ve e-posta adresi config.js dosyasına eklenince form çalışır. Şimdilik bizi telefonla arayabilirsiniz.';
+		if (!wa && !mail && msg) msg.textContent = TX('draftMsg', 'Taslak: WhatsApp numarası ve e-posta adresi config.js dosyasına eklenince form çalışır. Şimdilik bizi telefonla arayabilirsiniz.');
 		function compose() {
 			var v = function (n) { var el = form.elements[n]; return el ? String(el.value || '').trim() : ''; };
-			var lines = ['Teklif talebi', 'Ürün: ' + v('urun'), 'Miktar: ' + v('miktar'), 'Teslim yeri: ' + v('teslimat'), 'Ad soyad: ' + v('ad'), 'Firma: ' + v('firma'), 'Telefon: ' + v('telefon'), 'E-posta: ' + v('eposta')];
-			if (v('mesaj')) lines.push('Not: ' + v('mesaj'));
+			var lines = [TX('quoteReq', 'Teklif talebi'), TX('fProduct', 'Ürün') + ': ' + v('urun'), TX('fQty', 'Miktar') + ': ' + v('miktar'), TX('fPlace', 'Teslim yeri') + ': ' + v('teslimat'), TX('fName', 'Ad soyad') + ': ' + v('ad'), TX('fCompany', 'Firma') + ': ' + v('firma'), TX('fPhone', 'Telefon') + ': ' + v('telefon'), TX('fMail', 'E-posta') + ': ' + v('eposta')];
+			if (v('mesaj')) lines.push(TX('fNote', 'Not') + ': ' + v('mesaj'));
 			return lines.join('\n');
 		}
 		function send(kind) {
@@ -120,7 +122,7 @@
 			var text = compose();
 			track('generate_lead', { kanal: kind, urun: form.elements.urun ? form.elements.urun.value : '' });
 			if (kind === 'wa') window.open('https://wa.me/' + wa + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
-			else window.location.href = 'mailto:' + mail + '?subject=' + encodeURIComponent('Teklif talebi: ' + (form.elements.urun ? form.elements.urun.value : '')) + '&body=' + encodeURIComponent(text);
+			else window.location.href = 'mailto:' + mail + '?subject=' + encodeURIComponent(TX('quoteSubject', 'Teklif talebi') + ': ' + (form.elements.urun ? form.elements.urun.value : '')) + '&body=' + encodeURIComponent(text);
 		}
 		form.addEventListener('submit', function (e) { e.preventDefault(); send(wa ? 'wa' : 'mail'); });
 		if (bWa) bWa.addEventListener('click', function () { send('wa'); });
@@ -139,13 +141,13 @@
 		if (q) {
 			fetch(root + 'search.json').then(function (r) { return r.json(); }).then(function (items) {
 				var words = fold(q).split(/\s+/).filter(Boolean);
-				var hits = items.filter(function (it) { var h = fold(it.t + ' ' + it.c); return words.every(function (w) { return h.indexOf(w) >= 0; }); });
+				var hits = items.filter(function (it) { var h = fold(it.t + ' ' + it.c + ' ' + (it.k || '')); return words.every(function (w) { return h.indexOf(w) >= 0; }); });
 				var head = document.querySelector('[data-search-head]');
-				if (head) head.textContent = '"' + q + '" için ' + hits.length + ' ürün';
+				if (head) head.textContent = TX('searchHead', '"{q}" için {n} ürün').replace('{q}', q).replace('{n}', hits.length);
 				document.querySelectorAll('[data-hide-on-search]').forEach(function (el) { el.hidden = true; });
 				box.innerHTML = '';
 				hits.slice(0, 120).forEach(function (it) {
-					var a = document.createElement('a'); a.className = 'card'; a.href = root + 'urun/' + it.s + '/';
+					var a = document.createElement('a'); a.className = 'card'; a.href = root + TX('item', 'urun/') + it.s + '/';
 					var im = document.createElement('div'); im.className = 'card-img';
 					if (it.i) { var img = document.createElement('img'); img.loading = 'lazy'; img.alt = it.t; img.src = (cfg.imgBase || '') + it.i; im.appendChild(img); }
 					var body = document.createElement('div'); body.className = 'card-body';
@@ -153,7 +155,7 @@
 					var c = document.createElement('span'); c.className = 'card-sub'; c.textContent = it.c;
 					body.appendChild(t); body.appendChild(c); a.appendChild(im); a.appendChild(body); box.appendChild(a);
 				});
-				if (!hits.length) box.innerHTML = '<p class="note">Sonuç bulunamadı. Aradığınız ürünü bize yazın, tedarik edelim.</p>';
+				if (!hits.length) box.innerHTML = '<p class="note">' + TX('noResult', 'Sonuç bulunamadı. Aradığınız ürünü bize yazın, tedarik edelim.') + '</p>';
 				track('search', { search_term: q });
 			});
 		}
