@@ -1,11 +1,157 @@
 {
-  "1133": {
-    "slogan": "Doğal · Dayanıklı · Zamansız",
-    "aciklama": "Pürüzsüz, yuvarlatılmış yüzeyli birinci kalite beyaz doğal taş. Peyzaj, bahçe tasarımı ve dekoratif uygulamalar için temiz, şık bir görünüm ve uzun ömürlü kullanım sunar.",
-    "ebatlar": ["3–5 cm", "5–10 cm", "10–15 cm"],
-    "fob_usd_ton": 500,
-    "paketleme": true,
-    "gorseller_yerel": ["assets/img/stones.jpg", "assets/img/hero.jpg", "assets/img/shore.jpg"],
-    "ozellikler": [["Malzeme", "Doğal dolomit"], ["Renk", "Beyaz"], ["Yüzey", "Tamburlanmış (yuvarlatılmış, pürüzsüz)"], ["Ambalaj", "Big bag, 1.200–1.300 kg"], ["20 ft konteyner", "20 big bag ≈ 24–26 ton"], ["40 ft konteyner", "40 big bag ≈ 48–52 ton"], ["Teslim şekli", "FOB Ambarlı"]]
+ "1133": {
+  "slogan": "Doğal · Dayanıklı · Zamansız",
+  "aciklama": "Pürüzsüz, yuvarlatılmış yüzeyli birinci kalite beyaz doğal taş. Peyzaj, bahçe tasarımı ve dekoratif uygulamalar için temiz, şık bir görünüm ve uzun ömürlü kullanım sunar.",
+  "ebatlar": [
+   "3–5 cm",
+   "5–10 cm",
+   "10–15 cm"
+  ],
+  "fob_usd_ton": 500,
+  "paketleme": true,
+  "gorseller_yerel": [
+   "assets/img/stones.jpg",
+   "assets/img/hero.jpg",
+   "assets/img/shore.jpg"
+  ],
+  "ozellikler": [
+   [
+    "Malzeme",
+    "Doğal dolomit"
+   ],
+   [
+    "Renk",
+    "Beyaz"
+   ],
+   [
+    "Yüzey",
+    "Tamburlanmış (yuvarlatılmış, pürüzsüz)"
+   ],
+   [
+    "Ambalaj",
+    "Big bag, 1.200–1.300 kg"
+   ],
+   [
+    "20 ft konteyner",
+    "20 big bag ≈ 24–26 ton"
+   ],
+   [
+    "40 ft konteyner",
+    "40 big bag ≈ 48–52 ton"
+   ],
+   [
+    "Teslim şekli",
+    "FOB Ambarlı"
+   ]
+  ],
+  "ozet": [
+   [
+    "Ebat",
+    "3–5 · 5–10 · 10–15 cm"
+   ],
+   [
+    "Ambalaj",
+    "Big bag, 1.200–1.300 kg"
+   ],
+   [
+    "Teslim",
+    "FOB Ambarlı"
+   ]
+  ]
+ },
+ "9001": {
+  "slogan": "Doğal · Tamburlanmış · Peyzaj Taşı",
+  "aciklama": "10/20 mm doğal tamburlanmış peyzaj taşı. Islak yüzeyde damarları ve koyu tonları belirginleşir, kuru halde daha mat bir doğal görünüm verir. Big bag veya palet ambalajla FOB Ambarlı teslim.",
+  "ebatlar": [
+   "10/20 mm"
+  ],
+  "gorseller_yerel": [
+   "assets/img/yesil-angel-islak.jpg",
+   "assets/img/yesil-angel-kuru.jpg"
+  ],
+  "gorsel_etiketleri": [
+   "Islak görünüm",
+   "Kuru görünüm"
+  ],
+  "ozet": [
+   [
+    "Ebat",
+    "10/20 mm"
+   ],
+   [
+    "Ambalaj",
+    "Big bag veya palet"
+   ],
+   [
+    "Teslim",
+    "FOB Ambarlı"
+   ]
+  ],
+  "ozellikler": [
+   [
+    "Ürün",
+    "Tamburlanmış Yeşil Angel (Green Angel)"
+   ],
+   [
+    "Ebat",
+    "10/20 mm"
+   ],
+   [
+    "Yüzey",
+    "Doğal tamburlanmış"
+   ],
+   [
+    "Kullanım",
+    "Peyzaj taşı"
+   ],
+   [
+    "Big bag",
+    "90 × 90 × 90 cm, 1.200–1.300 kg / adet, kapaksız"
+   ],
+   [
+    "Palet",
+    "20 kg polietilen torba, streçli, 1.350 kg / palet"
+   ],
+   [
+    "Teslim şekli",
+    "FOB Ambarlı"
+   ]
+  ],
+  "paketleme_secenekleri": [
+   {
+    "ad": "Big bag",
+    "gorsel": "assets/img/bigbag-yesil-angel.jpg",
+    "satirlar": [
+     "90 × 90 × 90 cm",
+     "1.200–1.300 kg / adet",
+     "Taş dolu, kapaksız"
+    ]
+   },
+   {
+    "ad": "Palet ambalaj",
+    "gorsel": "assets/img/palet-yesil-angel.jpg",
+    "satirlar": [
+     "20 kg polietilen torba",
+     "Streç filmli",
+     "1.350 kg / palet"
+    ]
+   }
+  ],
+  "konteyner": {
+   "baslik": "40 ft konteyner yükleme planı",
+   "planlar": [
+    {
+     "ad": "20 big bag",
+     "adet": 20,
+     "toplam": "≈ 24–26 ton"
+    },
+    {
+     "ad": "20 palet",
+     "adet": 20,
+     "toplam": "27 ton (27.000 kg)"
+    }
+   ],
+   "not": "Konteyner yük kapasitesi ve yasal taşıma ağırlık sınırları kontrol edilmelidir."
   }
+ }
 }

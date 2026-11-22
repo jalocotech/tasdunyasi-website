@@ -49,6 +49,7 @@
 		main.src = thumbs[cur].getAttribute('data-thumb');
 		thumbs.forEach(function (x, k) { x.setAttribute('aria-pressed', k === cur ? 'true' : 'false'); });
 		var n = document.querySelector('[data-gal-i]'); if (n) n.textContent = cur + 1;
+		var cp = document.querySelector('[data-gal-cap]'); if (cp) cp.textContent = thumbs[cur].getAttribute('data-cap') || '';
 		thumbs[cur].scrollIntoView({ block: 'nearest', inline: 'center' });
 	}
 	thumbs.forEach(function (b, k) { b.addEventListener('click', function () { show(k); }); });

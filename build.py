@@ -272,7 +272,8 @@ def build_products():
         arrows = '<button type="button" class="gal-nav prev" data-prev aria-label="Önceki görsel">&#8249;</button><button type="button" class="gal-nav next" data-next aria-label="Sonraki görsel">&#8250;</button><span class="gal-count"><b data-gal-i>1</b> / ' + str(len(gallery)) + '</span>' if multi else ''
         thumbs = ''
         if multi:
-            thumbs = '<div class="thumbs">' + ''.join(f'<button type="button" data-thumb="{e(g)}" aria-pressed="{"true" if i == 0 else "false"}" aria-label="Görsel {i + 1}"><img loading="lazy" src="{e(g)}" alt=""></button>' for i, g in enumerate(gallery)) + '</div>'
+            caps = o.get('gorsel_etiketleri', [])
+            thumbs = '<div class="thumbs">' + ''.join(f'<button type="button" data-thumb="{e(g)}" data-cap="{e(caps[i]) if i < len(caps) else ""}" aria-pressed="{"true" if i == 0 else "false"}" aria-label="Görsel {i + 1}"><img loading="lazy" src="{e(g)}" alt=""></button>' for i, g in enumerate(gallery)) + '</div>'
         sizes = o.get('ebatlar') or ([t for t in p['tokens'] if re.search(r'\d\s*(x|X|-)\s*\d.*(cm|mm)$', t)] if len(p['tokens']) > 1 and parts[0] in ('tamburlanmis-peyzaj-taslari', 'cam-peyzaj-urunleri', 'akvaryum-taslari-ve-camlari') else [])
         size_html = ''
         if len(sizes) > 1:
@@ -290,11 +291,11 @@ def build_products():
             specs.append(('Ürün kodu', p['kod']))
         specs += o.get('ozellikler', [])
         rest = [t for t in p['tokens'] if t not in sizes] if not o.get('ozellikler') else []
-        if sizes:
+        if sizes and not o.get('ozellikler'):
             specs.append(('Ebatlar', ' · '.join(sizes)))
         if rest:
             specs.append(('Özellikler', ', '.join(rest)))
-        spec_html = '<table class="specs"><tbody>' + ''.join(f'<tr><th scope="row">{e(k)}</th><td>{e(v)}</td></tr>' for k, v in specs) + '</tbody></table>'
+        spec_html = '<dl class="spec-grid">' + ''.join(f'<div><dt>{e(k)}</dt><dd>{e(v)}</dd></div>' for k, v in specs) + '</dl>'
         feats = ''
         if parts[0] == 'tamburlanmis-peyzaj-taslari':
             feats = '<section class="feats"><div class="wrap">' + ''.join(f'<div class="feat"><svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#16303F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">{s}</svg><div><b>{e(t)}</b><span>{e(d)}</span></div></div>' for t, d, s in FEATS) + '</div></section>'
@@ -309,23 +310,40 @@ def build_products():
         related = [x for x in by_cat.get(cat, []) if x is not p][:4]
         rel_html = f'<section class="wrap" style="padding-bottom:64px"><h2 class="big" style="font-size:26px;margin-bottom:18px">Aynı gruptan</h2><div class="grid">{"".join(product_card(x, r) for x in related)}</div></section>' if related else ''
         wa_text = f'Merhaba, "{p["ad"]}" için fiyat ve numune bilgisi almak istiyorum.'
+        caps0 = o.get('gorsel_etiketleri', [''])[0] if multi else ''
+        facts = o.get('ozet') or [('Teslim', 'Kemerburgaz / FOB Ambarlı'), ('Fiyat', 'Teklif ile')]
+        facts_html = '<ul class="facts">' + ''.join(f'<li><span>{e(k)}</span><b>{e(v)}</b></li>' for k, v in facts) + '</ul>'
+        opts = ''
+        if o.get('paketleme_secenekleri'):
+            cards = ''.join(f'<article class="opt"><img loading="lazy" src="{r}{x["gorsel"]}" alt="{e(x["ad"])}"><div><h3>{e(x["ad"])}</h3><ul>' + ''.join(f'<li>{e(s)}</li>' for s in x['satirlar']) + '</ul></div></article>' for x in o['paketleme_secenekleri'])
+            k = o.get('konteyner')
+            plan = ''
+            if k:
+                plan = f'<h3 class="plan-h">{e(k["baslik"])}</h3><div class="plans">' + ''.join(f'<div class="plan"><b>{e(x["ad"])}</b><div class="bay">{"<span></span>" * x["adet"]}</div><em>Toplam: {e(x["toplam"])}</em></div>' for x in k['planlar']) + f'</div><p class="note">{e(k["not"])}</p>'
+            opts = f'<section class="pdp-sec"><div class="wrap"><span class="kicker">Ambalaj</span><h2 class="sec-h">Paketleme seçenekleri</h2><div class="opts">{cards}</div>{plan}</div></section>'
         body = f'''{crumb(trail)}
-<div class="wrap product" data-product="{e(p["ad"])}">
-<div class="product-media"><div class="pm-gallery"><div class="product-main">{main_img}{arrows}</div>{thumbs}</div>
-<section class="info-block"><h2>Ürün bilgileri</h2>{spec_html}</section></div>
-<div class="product-info"><span class="kicker">{e(CATS[parts[0]])}</span><h1>{e(p["ad"])}</h1>{f'<span class="tagline">{e(o["slogan"])}</span>' if o.get("slogan") else ''}{f'<p style="margin:0;font-size:17px;color:#3C4B55">{e(desc)}</p>' if desc else ''}
+<section class="pdp-hero" data-product="{e(p["ad"])}"><div class="wrap pdp-grid">
+<div class="pdp-media"><div class="product-main">{main_img}{arrows}</div>{f'<div class="gal-cap" data-gal-cap>{e(caps0)}</div>' if multi else ''}{thumbs}</div>
+<div class="pdp-summary"><span class="kicker">{e(CATS[parts[0]])}</span><h1>{e(p["ad"])}</h1>{f'<span class="tagline">{e(o["slogan"])}</span>' if o.get("slogan") else ''}{f'<p class="lead">{e(desc)}</p>' if desc else ''}
 {size_html}
-<div class="quote-box">{box}<div class="note">Teslim: Kemerburgaz / FOB Ambarlı</div></div>
-<div class="btns"><a class="btn btn-cta" href="#teklif" data-ev="quote_click" data-urun="{e(p["ad"])}">Bu ürün için teklif iste</a><a class="btn btn-ghost" data-wa="{e(wa_text)}" data-urun="{e(p["ad"])}">WhatsApp</a><a class="btn btn-ghost" href="tel:{re.sub(r"[^+0-9]", "", PHONES[0])}" data-ev="phone_click" data-urun="{e(p["ad"])}">{PHONES[0]}</a></div>
-<section class="quote-card" id="teklif"><h2>Teklif isteyin</h2><p>Ürün ve ebat seçiminiz forma eklenir. Miktarı ve teslim yerini yazın, size dönelim.</p>{quote_form(r, p["ad"])}</section>
-</div>
-</div>
+{facts_html}
+<div class="quote-box">{box}</div>
+<div class="btns"><a class="btn btn-cta" href="#teklif" data-ev="quote_click" data-urun="{e(p["ad"])}">Bu ürün için teklif iste</a><a class="btn btn-light" data-wa="{e(wa_text)}" data-urun="{e(p["ad"])}">WhatsApp</a><a class="btn btn-light" href="tel:{re.sub(r"[^+0-9]", "", PHONES[0])}" data-ev="phone_click" data-urun="{e(p["ad"])}">{PHONES[0]}</a></div>
+</div></div></section>
 {feats}
+<section class="pdp-sec"><div class="wrap"><span class="kicker">Teknik</span><h2 class="sec-h">Ürün bilgileri</h2>{spec_html}</div></section>
+{opts}
 {pack}
+<section class="pdp-quote" id="teklif"><div class="wrap pq-grid">
+<div class="pq-text"><span class="kicker">Teklif</span><h2>Teklif isteyin</h2><p>Ürün ve ebat seçiminiz forma eklenir. Miktarı ve teslim yerini yazın, size dönelim.</p>
+<ul class="pq-contact">{''.join(f'<li><a href="tel:{re.sub(r"[^+0-9]", "", t)}" data-ev="phone_click">{t}</a></li>' for t in PHONES)}<li class="addr">{e(CFG["adres"])}</li></ul>
+<a class="btn btn-light" data-wa="{e(wa_text)}" data-urun="{e(p["ad"])}">WhatsApp ile yazın</a></div>
+<div class="pq-form">{quote_form(r, p["ad"])}</div>
+</div></section>
 {rel_html}
 <div class="sticky-quote"><a class="btn btn-cta" href="#teklif">Teklif iste</a><a class="btn btn-ghost" data-wa="{e(wa_text)}">WhatsApp</a></div>'''
         d = f'{p["ad"]} – {CATS[cat]}. {", ".join(p["tokens"][:3])}'.strip(' .')
-        write(f'urun/{p["slug"]}/index.html', page(2, f'{p["ad"]} | {CATS[parts[0]]} | Taş Dünyası', body, desc=d + '. Fiyat ve numune için teklif isteyin.', active='products', body_class='has-sticky', canonical=f'urun/{p["slug"]}/'))
+        write(f'urun/{p["slug"]}/index.html', page(2, f'{p["ad"]} | {CATS[parts[0]]} | Taş Dünyası', body, desc=d + '. Fiyat ve numune için teklif isteyin.', active='products', body_class='has-sticky pdp', canonical=f'urun/{p["slug"]}/'))
 
 
 # ---------- Kurumsal sayfalar ----------
