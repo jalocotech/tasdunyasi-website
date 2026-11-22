@@ -9,6 +9,21 @@
 	}
 	function digits(s) { return String(s || '').replace(/\D+/g, ''); }
 
+	// --- Mobil menü ---
+	(function () {
+		var btn = document.querySelector('.menu-btn'), menu = document.getElementById('menu');
+		if (!btn || !menu) return;
+		function set(open) {
+			menu.hidden = !open;
+			btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+			btn.setAttribute('aria-label', open ? 'Menüyü kapat' : 'Menüyü aç');
+		}
+		btn.addEventListener('click', function () { set(menu.hidden); });
+		menu.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
+		document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !menu.hidden) { set(false); btn.focus(); } });
+		window.addEventListener('resize', function () { if (window.innerWidth > 900) set(false); });
+	})();
+
 	// --- İletişim bağlantıları (config.js'ten) ---
 	var wa = digits(cfg.whatsapp);
 	document.querySelectorAll('[data-wa]').forEach(function (a) {

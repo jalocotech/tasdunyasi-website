@@ -101,8 +101,16 @@ def page(depth, title, body, desc='', active='', body_class='', canonical=''):
 <a class="btn btn-ghost" data-wa="">WhatsApp</a>
 <a class="btn btn-cta" href="{r}iletisim/#teklif" data-ev="quote_click">Teklif İste</a>
 </div>
+<button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menüyü aç"><span></span><span></span><span></span></button>
 </div>
 <div class="stripe" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="drawer" id="menu" hidden>
+<form class="search" action="{r}urunler/" method="get" role="search"><input name="q" type="search" placeholder="Ürün ara" aria-label="Ürün ara"><button type="submit">Ara</button></form>
+<nav class="drawer-nav" aria-label="Mobil menü">{nav_html}</nav>
+<nav class="drawer-sub" aria-label="Diğer bağlantılar"><a href="{r}e-katalog/">E-Katalog</a><a href="{r}urun-kategori/antika-urunler/">Antik Eşya Mağazası</a><a href="{r}sanal-tur/">360° Sanal Tur</a></nav>
+<div class="drawer-tel">{tel}</div>
+<a class="btn btn-ghost" data-wa="">WhatsApp ile yazın</a>
+</div>
 </header>
 <main>
 {body}
